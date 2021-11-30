@@ -1,6 +1,7 @@
 #include "std_lib_facilities.h"
 
 class Year {
+	//megadjuk az invariantokat	(annak érdekében, hogy valid értékeket tudjunk megadni)
 	static constexpr int min = 1800;
 	static constexpr int max = 2200;
 public:
@@ -12,11 +13,13 @@ private:
 	int y;
 };
 
+// ++ operator felvétele Year typehoz
 Year operator++(Year& year)
 {
 	year.increment();
 }
 
+// output operator felvétele Year typehoz
 ostream& operator<< (ostream& os, Year year)
 {
 	return os << year.year();
